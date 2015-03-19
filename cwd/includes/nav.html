@@ -1,0 +1,89 @@
+<nav>
+    <div class="nav-wrapper">
+        [pbAdvContentPanel DisplayForMember="False"  Roles="@@memberlevel"] 
+        <ul id="nav">
+       <!-- <li> <a href="/home" id="nav-item1">Home</a> </li>-->
+       <li> <a href="/admin/login" id="nav-item2">Jobs</a> </li>
+        <li> <a href="/admin/login" id="nav-item3">Blog</a> </li>
+        <li> <a href="/admin/login" id="nav-item4">Training</a> </li>
+        <li> <a href="/admin/login" id="nav-item5">Advice</a> </li>
+    <li> <a href="admin/login" id="nav-item6">Tools</a> </li>
+     <li> <a href="/whats-new" id="nav-item6">What's New</a> </li>
+    <li> <a href="/admin/login" id="nav-item6">Candidates</a></li>
+        <li class="drop"> <a href="#" id="nav-item6">Contact</a>  
+       <ul>
+            <li><a href="/contact/contact-us">Contact Us</a></li>
+            <li><a href="/contact/feedback">Feedback</a></li>
+             <li><a href="/contact/complaints">Complaints</a></li>
+          </ul> 
+        </li>
+      </ul>
+       [/pbAdvContentPanel ]  
+ [pbAdvContentPanel DisplayForMember="True"   Roles="@@memberlevel"] 
+      <ul id="nav">
+   <!--     <li> <a href="/home" id="nav-item1">Home</a> </li>-->
+      <li> <a href="/jobs" id="nav-item2">Jobs</a>
+     	<ul>
+            <li><a href="/jobs/job-search">Job Search</a></li>
+             <li><a href="/jobs/add-new-job">Add New Job</a></li>
+         </ul> 
+         </li> 
+        <li> <a href="/blog" id="nav-item3">Blog</a> </li>
+        <li> <a href="/training" id="nav-item4">Training</a> </li>
+      <li> <a href="/advice" id="nav-item5">Advice</a> </li>
+      <li> <a href="/tools" id="nav-item6">Tools</a></li>
+      <li> <a href="/whats-new" id="nav-item6">What's New</a> </li>
+   <li> <a href="/candidates" id="nav-item6">Candidates</a>
+   <ul>
+            <li><a href="/candidates/candidate-search">Candidate Search</a></li>
+            <li><a href="/candidates/create-candidate">Add New Candidate</a></li>
+
+         </ul> 
+   </li>
+    <li class="drop"> <a href="#" id="nav-item6">Contact</a>
+       <ul>
+            <li><a href="/contact/contact-us">Contact Us</a></li>
+            <li><a href="/contact/feedback">Feedback</a></li>
+             <li><a href="/contact/complaints">Complaints</a></li>
+          </ul> 
+       
+        </li>
+      </ul>
+       [/pbAdvContentPanel ]
+   [pbAdvContentPanel DisplayForMember="True"   Roles="member,members1"] 
+      <ul id="nav">
+   <!--     <li> <a href="/home" id="nav-item1">Home</a> </li>-->
+      <li> <a href="/jobs" id="nav-item2">Jobs</a>
+     	<ul>
+            <li><a href="/jobs/job-search">Job Search</a></li>
+         </ul> 
+         </li> 
+        <li> <a href="/blog" id="nav-item3">Blog</a> </li>
+        <li> <a href="/training" id="nav-item4">Training</a> </li>
+      <li> <a href="/advice" id="nav-item5">Advice</a> </li>
+      <li> <a href="/tools" id="nav-item6">Tools</a></li>
+      <li> <a href="/whats-new" id="nav-item6">What's New</a> </li>
+  		<li>  [pbMaxJobCandidateMemberButton Text="My Profile" Roles="member,members1" EditPage="/candidates/add-new-candidate" CollectionId="17520fa7-d667-47a1-91d4-3fe8602e0ad7" CreateProfileStatus="Registered"]</li> 
+    	<li class="drop"> <a href="#" id="nav-item6">Contact</a>
+       <ul>
+            <li><a href="/contact/contact-us">Contact Us</a></li>
+            <li><a href="/contact/feedback">Feedback</a></li>
+             <li><a href="/contact/complaints">Complaints</a></li>
+          </ul> 
+       
+        </li>
+      </ul>
+       [/pbAdvContentPanel ]
+      <!-- Search Start-->
+      <div class="search-wrap">
+      [pbAdvBasicSearch PartialMatch="True"  ResultsPage="search results"]
+                        [ContentTemplate]
+                       [pbTextbox  ControlType="Text"  EmptyMessage="SEARCH"  ID="SearchText" CssClass="searchfield"]
+                      [pbButton ID="SearchButton" Text="" ControlType="Button" CssClass="searchbutton"]
+                    [/ContentTemplate]
+						[/pbAdvBasicSearch]
+
+      </div>
+      <!-- Search End--> 
+    </div>
+  </nav>
