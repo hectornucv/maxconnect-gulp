@@ -1,0 +1,42 @@
+{
+  "name": "maxconnect-gulp",
+  "version": "0.0.2",
+  "homepage": "https://github.com/stagfoo/maxconnect-gulp",
+  "authors": [
+    "Alex <alexanderddking@gmail.com>"
+  ],
+  "license": "all rights reserved",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "*",
+    "jquery": "*",
+    "bootstrap": "*"
+  },
+  "overrides": {
+    "modernizr": {
+      "main": "./modernizr.js"
+    },
+    "bootstrap": {
+      "main": [
+        "./js/transition.js",
+        "./js/alert.js",
+        "./js/button.js",
+        "./js/carousel.js",
+        "./js/collapse.js",
+        "./js/dropdown.js",
+        "./js/modal.js",
+        "./js/tooltip.js",
+        "./js/popover.js",
+        "./js/scrollspy.js",
+        "./js/tab.js",
+        "./js/affix.js"
+      ]
+    }
+  }
+}
