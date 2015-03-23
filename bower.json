@@ -38,5 +38,6 @@
         "./js/affix.js"
       ]
     }
-  }
+  },
+  "private": true
 }
