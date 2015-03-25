@@ -124,7 +124,7 @@ gulp.task('html-lint', function () {
         .pipe(through2.obj(function(file, enc, cb){
             cb(null, file);
             if (!file.w3cjs.success){
-              new Error('HTML validation error(s) found');
+              throw new Error('HTML validation error(s) found');
             }
         }));
 });
