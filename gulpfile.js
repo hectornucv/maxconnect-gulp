@@ -12,6 +12,9 @@ var
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     jpegtran = require('imagemin-jpegtran'),
+    autoprefixer = require('gulp-autoprefixer'),
+    w3cjs = require('gulp-w3cjs'),
+    through2 = require('through2'),
     gulp = require('gulp');
 
 var less_files = [
@@ -19,8 +22,15 @@ var less_files = [
     'bower_components/bootstrap/less/*.less',
     'cwd/assets/less/*.less',
     ]
+var html_files = [
+'render/templates/pages/*.html',
+'render/templates/collections/*.html',
+'render/templates/emails/*.html',
+'render/templates/layouts/*.html']
 
-//Include - includes html snippets
+/*======================================
+=            HTML - includes          =
+======================================*/
 gulp.task('include', function() {
   gulp.src(['cwd/templates/pages/*'])
     .pipe(fileinclude({
@@ -53,8 +63,9 @@ gulp.task('clean', function(cb) {
     del(['./render/*'], cb)
 });
 
-
-//contact js -   
+/*======================================
+=            Convert JS         =
+======================================*/
 gulp.task('js', function() {
   return gulp.src(mainBowerFiles())
     // .pipe(jshint())
@@ -64,8 +75,35 @@ gulp.task('js', function() {
     .pipe(gulp.dest('render/assets/js/'));
 });
 
+/*======================================
+=            Convert Less          =
+======================================*/
+
 gulp.task('less', function() {
-   gulp.src(less_files).pipe(concat('skin.css')).pipe(less()).pipe(minifyCSS({keepBreaks:true})).pipe(gulp.dest('render/'));
+   return gulp.src(less_files)
+   .pipe(concat('skin.css'))
+   .pipe(less())
+   .pipe(autoprefixer({
+             browsers: [
+            'last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4','opera 12'],
+            cascade: false
+    }))
+   .pipe(gulp.dest('render/'));
+});
+
+/*======================================
+=            Minifying Task            =
+======================================*/
+
+gulp.task('minify-js', function() {
+  return gulp.src('render/assets/js/main.js')
+  .pipe(uglify())
+  .pipe(gulp.dest('render/assets/js/'));
+});
+gulp.task('minify-less', function() {
+    return gulp.src('render/skin.css')
+   .pipe(minifyCSS({keepBreaks:true}))
+   .pipe(gulp.dest('render/'));
 });
 
 gulp.task('imagemin', function() {
@@ -77,8 +115,29 @@ gulp.task('imagemin', function() {
         }))
         .pipe(gulp.dest('render/assets/images/'));
 });
+/*=====================================
+=        Testing Tasks  w3c ,js       =
+=====================================*/
+gulp.task('html-lint', function () {
+    gulp.src(html_files)
+        .pipe(w3cjs())
+        .pipe(through2.obj(function(file, enc, cb){
+            cb(null, file);
+            if (!file.w3cjs.success){
+              new Error('HTML validation error(s) found');
+            }
+        }));
+});
 
-//Accesiblily Role - WIP
+
+
+
+
+
+
+/*======================================
+=      Accesiblily Role - WIP          =
+======================================*/
 gulp.task('aria', function () {
     gulp.src('render/**/*.html')
       .pipe(arialinter({
@@ -87,6 +146,18 @@ gulp.task('aria', function () {
       .pipe(gulp.dest('render/'));
 });
 
-gulp.task('default', ['clean'], function() {
-   gulp.start('include','js','less');
+gulp.task('prod', ['clean'], function() {
+   gulp.start('include','js','less','minify-js','minify-less','imagemin');
 });
+
+gulp.task('default', ['clean'], function() {
+   gulp.start('include','js','less','html-lint');
+});
+
+
+
+
+
+
+
+
