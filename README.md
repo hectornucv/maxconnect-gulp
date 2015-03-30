@@ -2,6 +2,11 @@
 
 This builder is made to help create a pegboard skin employing the DRY concept of coding.
 
+##Setup in terminal
+`sudo npm install`
+`sudo bower install` - takes time
+`gulp`
+
 ##Assets 
 found under `cwd/assets` convert to `render/assets`
 ##HTML
@@ -10,11 +15,13 @@ Using the same structure for pegboard.
 - Pages
 - Collections
 - Emails
+- Forms
+
 
 ###Includes
 found under `cwd/includes` set as base for includes here is some example include code
 ```
-@@include('h1.html',{
+			@@include('h1.html',{
                 "text": "Hello World"
                 })
 ``` 
@@ -39,12 +46,7 @@ bootstrap js files and your js files are concatnated from
 
 ##Gulp
 ###Commands
-Only 1 command so far `gulp`
-*more coming soon*
-###Deps
-    "gulp-concat": "^2.5.2",
-    "gulp-minify-css": "^1.0.0",
-    "del": "^1.1.1",
-    "gulp-jshint": "^1.9.4",
-    "gulp-uglify": "^1.1.0",
-With more enhancements to come.
+Only 2 command so far `gulp` and `gulp prod`
+
+##Homepage Design
+![Home Page Desing](https://dl.dropboxusercontent.com/u/15590155/Home-PJF160-D1.png)
