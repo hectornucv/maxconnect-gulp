@@ -15,6 +15,9 @@ var
     autoprefixer = require('gulp-autoprefixer'),
     w3cjs = require('gulp-w3cjs'),
     through2 = require('through2'),
+    changed = require('gulp-changed'),
+    cache = require('gulp-cache'),
+    remember = require('gulp-remember'),
     gulp = require('gulp');
 
 var less_files = [
@@ -31,6 +34,7 @@ var html_files = [
 /*======================================
 =            HTML - includes          =
 ======================================*/
+
 gulp.task('include', function() {
   gulp.src(['cwd/templates/pages/*'])
     .pipe(fileinclude({
@@ -58,14 +62,10 @@ gulp.task('include', function() {
     .pipe(gulp.dest('./render/templates/layouts/'));
 });
 
-//Clean - delete everthing in render
-gulp.task('clean', function(cb) {
-    del(['./render/*'], cb)
-});
-
 /*======================================
 =            Convert JS         =
 ======================================*/
+
 gulp.task('js', function() {
   return gulp.src(mainBowerFiles())
     // .pipe(jshint())
@@ -108,16 +108,18 @@ gulp.task('minify-less', function() {
 
 gulp.task('imagemin', function() {
    return gulp.src('cwd/assets/images/*')
-        .pipe(imagemin({
+        .pipe(cache(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant(),jpegtran()]
-        }))
+        })))
         .pipe(gulp.dest('render/assets/images/'));
 });
+
 /*=====================================
 =        Testing Tasks  w3c ,js       =
 =====================================*/
+
 gulp.task('html-lint', function () {
     gulp.src(html_files)
         .pipe(w3cjs())
@@ -129,15 +131,10 @@ gulp.task('html-lint', function () {
         }));
 });
 
-
-
-
-
-
-
 /*======================================
 =      Accesiblily Role - WIP          =
 ======================================*/
+
 gulp.task('aria', function () {
     gulp.src('render/**/*.html')
       .pipe(arialinter({
@@ -146,12 +143,28 @@ gulp.task('aria', function () {
       .pipe(gulp.dest('render/'));
 });
 
-gulp.task('prod', ['clean'], function() {
+/*======================================
+=            Cleaner Calls            =
+======================================*/
+
+gulp.task('delete-cache', function () {
+  cache.caches = {};
+});
+
+gulp.task('clean', function(cb) {
+    del(['./render/*'], cb)
+});
+
+/*=====================================
+=            Builder Calls            =
+=====================================*/
+
+gulp.task('prod', function() {
    gulp.start('include','js','less','minify-js','minify-less','imagemin');
 });
 
-gulp.task('default', ['clean'], function() {
-   gulp.start('include','js','less','html-lint');
+gulp.task('default', function() {
+   gulp.start('include','js','less');
 });
 
 
