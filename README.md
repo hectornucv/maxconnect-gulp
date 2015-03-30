@@ -3,12 +3,15 @@
 This builder is made to help create a pegboard skin employing the DRY concept of coding.
 
 ##Setup in terminal
-`sudo npm install`
-`sudo bower install` - takes time
-`gulp`
+- `sudo npm install` *can take a few mins*
+- `sudo bower install`
+- `gulp`
+- upload the `render/` folder to the skins folder in pegboard
 
 ##Assets 
-found under `cwd/assets` convert to `render/assets`
+- found under `cwd/assets/*` 
+- convert to `render/assets/*`
+
 ##HTML
 Using the same structure for pegboard.
 - Layouts
@@ -16,11 +19,31 @@ Using the same structure for pegboard.
 - Collections
 - Emails
 - Forms
+
 ##Frameworks 
-[Razor](http://www.asp.net/web-pages/overview/getting-started/introducing-razor-syntax-(c))
-[Bower](http://bower.io/)
-[Npm](https://www.npmjs.com/)
-[Nodejs](https://nodejs.org/)
+- [Razor](http://www.asp.net/web-pages/overview/getting-started/introducing-razor-syntax-(c))
+- [Bower](http://bower.io/)
+- [gulpjs](http://gulpjs.com/)
+- [less](http://lesscss.org/)
+- [Npm](https://www.npmjs.com/)
+- [Nodejs](https://nodejs.org/)
+
+##Naming convertions
+```less
+/* Html include */
+includes/collections/jobs/card-job-item.html
+
+/* Less include */
+less/collections/jobs/card-job-item.less
+
+/* Less structure */
+.card {
+	h1 { color:white }
+}
+``` 
+
+
+
 
 ###Includes
 found under `cwd/includes` set as base for includes here is some example include code
@@ -50,7 +73,8 @@ bootstrap js files and your js files are concatnated from
 
 ##Gulp
 ###Commands
-Only 2 command so far `gulp` and `gulp prod`
+ - `gulp` 
+ - `gulp prod` (minifies & compresses)
 
 ##Homepage Design
 ![Home Page Desing](https://dl.dropboxusercontent.com/u/15590155/Home-PJF160-D1.png)
