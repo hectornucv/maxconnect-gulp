@@ -40,6 +40,8 @@
     "main-bower-files": "^2.6.2",
     "gulp-cache": "^0.2.8",
     "gulp-sourcemaps": "^1.5.1",
-    "gulp-changed": "^1.2.1"
+    "gulp-changed": "^1.2.1",
+    "gulp-remember": "*"
+
   }
 }
