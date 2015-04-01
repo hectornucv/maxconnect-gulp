@@ -16,7 +16,7 @@
   "dependencies": {
     "modernizr": "*",
     "jquery": "*",
-    "bootstrap": "*"
+    "bootstrap": "v3.3.4"
   },
   "overrides": {
     "modernizr": {
