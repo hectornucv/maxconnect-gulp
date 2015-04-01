@@ -32,7 +32,7 @@ var
 var less_files = [
     'bower_components/bootstrap/less/variables.less',
     'bower_components/bootstrap/less/*.less',
-    'cwd/assets/less/example.less',
+    'cwd/assets/less/*.less',
     ]
 var html_files = [
     'render/templates/pages/*.html',
