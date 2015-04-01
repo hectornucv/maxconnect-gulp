@@ -41,12 +41,20 @@ var html_files = [
     'render/templates/layouts/*.html'
 ]
 
+var onError = function (err) {  
+  gutil.beep();
+  console.log(err);
+};
+
 /*======================================
 =            HTML - includes          =
 ======================================*/
 
 gulp.task('include', function() {
   gulp.src(['cwd/templates/pages/*'])
+
+    .pipe(plumber())
+  
     .pipe(fileinclude({
       prefix: '@@',
       basepath: 'cwd/includes/'
@@ -54,6 +62,9 @@ gulp.task('include', function() {
     .pipe(gulp.dest('./render/templates/pages/'))
        .pipe(reload({ stream:true }));
   gulp.src(['cwd/templates/collections/*'])
+
+    .pipe(plumber())
+  
     .pipe(fileinclude({
       prefix: '@@',
       basepath: 'cwd/includes/'
@@ -61,6 +72,9 @@ gulp.task('include', function() {
     .pipe(gulp.dest('./render/templates/collections/'))
        .pipe(reload({ stream:true }));
   gulp.src(['cwd/templates/emails/*'])
+
+    .pipe(plumber())
+  
     .pipe(fileinclude({
       prefix: '@@',
       basepath: 'cwd/includes/'
@@ -68,6 +82,9 @@ gulp.task('include', function() {
     .pipe(gulp.dest('./render/templates/emails/'))
        .pipe(reload({ stream:true }));
   gulp.src(['cwd/templates/layouts/*'])
+
+    .pipe(plumber())
+  
     .pipe(fileinclude({
       prefix: '@@',
       basepath: 'cwd/includes/'
@@ -95,6 +112,7 @@ gulp.task('js', function() {
 gulp.task('less', function() {
    return gulp.src(less_files)
    .pipe(concat('skin.css'))
+   .pipe(plumber())
    .pipe(less())
    .pipe(autoprefixer({
              browsers: [
