@@ -48,3 +48,18 @@ Only 1 command so far `gulp`
     "gulp-jshint": "^1.9.4",
     "gulp-uglify": "^1.1.0",
 With more enhancements to come.
+
+###Additional Information 
+
+###Installation Progress###
+Install node.js (windows, linux, mac)
+
+- npm install bower
+- bower install
+- npm install
+- npm install clean-css
+
+Dependiences
+
+
+

@@ -1,5 +1,6 @@
 'use strict';
 var 
+    gulp = require('gulp'),
     fileinclude = require('gulp-file-include'),
     del = require('del'),
     concat = require('gulp-concat'),
@@ -15,21 +16,30 @@ var
     autoprefixer = require('gulp-autoprefixer'),
     w3cjs = require('gulp-w3cjs'),
     through2 = require('through2'),
-    changed = require('gulp-changed'),
     cache = require('gulp-cache'),
-    remember = require('gulp-remember'),
-    gulp = require('gulp');
+    livereload = require('gulp-livereload'),
+    sourcemaps = require('gulp-sourcemaps'),
+    watch = require('gulp-watch'),
+    browserSync = require('browser-sync'),
+    debug = require('gulp-debug'),
+    size = require('gulp-size'),
+    notify = require('gulp-notify'),
+    gutil = require('gulp-util'),
+    cached = require('gulp-cached'),
+    plumber = require('gulp-plumber'),
+    reload = browserSync.reload;
 
 var less_files = [
     'bower_components/bootstrap/less/variables.less',
     'bower_components/bootstrap/less/*.less',
-    'cwd/assets/less/*.less',
+    'cwd/assets/less/example.less',
     ]
 var html_files = [
-'render/templates/pages/*.html',
-'render/templates/collections/*.html',
-'render/templates/emails/*.html',
-'render/templates/layouts/*.html']
+    'render/templates/pages/*.html',
+    'render/templates/collections/*.html',
+    'render/templates/emails/*.html',
+    'render/templates/layouts/*.html'
+]
 
 /*======================================
 =            HTML - includes          =
@@ -41,25 +51,29 @@ gulp.task('include', function() {
       prefix: '@@',
       basepath: 'cwd/includes/'
     }))
-    .pipe(gulp.dest('./render/templates/pages/'));
+    .pipe(gulp.dest('./render/templates/pages/'))
+       .pipe(reload({ stream:true }));
   gulp.src(['cwd/templates/collections/*'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: 'cwd/includes/'
     }))
-    .pipe(gulp.dest('./render/templates/collections/'));
+    .pipe(gulp.dest('./render/templates/collections/'))
+       .pipe(reload({ stream:true }));
   gulp.src(['cwd/templates/emails/*'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: 'cwd/includes/'
     }))
-    .pipe(gulp.dest('./render/templates/emails/'));
+    .pipe(gulp.dest('./render/templates/emails/'))
+       .pipe(reload({ stream:true }));
   gulp.src(['cwd/templates/layouts/*'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: 'cwd/includes/'
     }))
-    .pipe(gulp.dest('./render/templates/layouts/'));
+    .pipe(gulp.dest('./render/templates/layouts/'))
+       .pipe(reload({ stream:true }));
 });
 
 /*======================================
@@ -68,10 +82,9 @@ gulp.task('include', function() {
 
 gulp.task('js', function() {
   return gulp.src(mainBowerFiles())
-    // .pipe(jshint())
-    // .pipe(jshint.reporter('default'))
     .pipe(concat('main.js', {newLine: ';'}))
     .pipe(uglify())
+    .pipe(debug({title: 'js:'}))
     .pipe(gulp.dest('render/assets/js/'));
 });
 
@@ -88,7 +101,8 @@ gulp.task('less', function() {
             'last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4','opera 12'],
             cascade: false
     }))
-   .pipe(gulp.dest('render/'));
+   .pipe(gulp.dest('render/'))
+   .pipe(reload({ stream:true }))
 });
 
 /*======================================
@@ -98,22 +112,21 @@ gulp.task('less', function() {
 gulp.task('minify-js', function() {
   return gulp.src('render/assets/js/main.js')
   .pipe(uglify())
+  .pipe(debug({title: 'minify-js:'}))
   .pipe(gulp.dest('render/assets/js/'));
 });
-gulp.task('minify-less', function() {
+
+gulp.task('minify-css', function() {
     return gulp.src('render/skin.css')
-   .pipe(minifyCSS({keepBreaks:true}))
+   .pipe(minifyCSS({keepBreaks:false}))
    .pipe(gulp.dest('render/'));
 });
 
 gulp.task('imagemin', function() {
    return gulp.src('cwd/assets/images/*')
-        .pipe(cache(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant(),jpegtran()]
-        })))
-        .pipe(gulp.dest('render/assets/images/'));
+        .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))) 
+        .pipe(gulp.dest('render/assets/images/'))
+        .pipe(size({showFiles: true}))
 });
 
 /*=====================================
@@ -143,31 +156,43 @@ gulp.task('aria', function () {
       .pipe(gulp.dest('render/'));
 });
 
+/*===============================
+=            Watcher            =
+===============================*/
+
+gulp.task('watcher', ['less'], function() {
+
+    browserSync({
+        server: "./render/",
+        index: "/templates/layouts/default.html"
+    });
+
+   gulp.watch("cwd/assets/less/*.less", ['less']);
+   gulp.watch("cwd/**/*.html", ['include']);
+});
+
+
 /*======================================
-=            Cleaner Calls            =
+=            Cleaner Calls             =
 ======================================*/
 
-gulp.task('delete-cache', function () {
-  cache.caches = {};
-});
+  gulp.task('clear', function (done) {
+    return cache.clearAll(done);
+  });
 
-gulp.task('clean', function(cb) {
-    del(['./render/*'], cb)
-});
+  gulp.task('clean', function(cb) {
+      del(['./render/*'], cb);
+  });
 
 /*=====================================
-=            Builder Calls            =
+=            Task Runners             =
 =====================================*/
 
-gulp.task('prod', function() {
-   gulp.start('include','js','less','minify-js','minify-less','imagemin');
-});
+gulp.task('prod', ['include', 'imagemin', 'js', 'less', 'minify-js', 'minify-css']);
 
-gulp.task('default', function() {
-   gulp.start('include','js','less');
-});
+gulp.task('default', ['clean', 'serve', 'include', 'js', 'imagemin']);
 
-
+gulp.task('watch', ['watcher']);
 
 
 
