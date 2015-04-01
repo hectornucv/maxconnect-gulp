@@ -39,7 +39,6 @@
     "main-bower-files": "^2.6.2",
     "gulp-sourcemaps": "^1.5.1",
     "gulp-changed": "^1.2.1",
-<<<<<<< HEAD
     "browser-sync": "^2.5.0",
     "livereload": "^0.3.6",
     "watch": "^0.14.0",
@@ -51,10 +50,8 @@
     "gulp-size": "^1.2.1",
     "gulp-sourcemaps": "^1.5.1",
     "gulp-w3cjs": "^0.3.0",
-    "gulp-util": "^3.0.4"
-=======
+    "gulp-util": "^3.0.4",
     "gulp-remember": "*"
 
->>>>>>> 9ef2b2e1bb3dfca1a732c1989780f493d8b56e4b
   }
 }

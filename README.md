@@ -104,4 +104,3 @@ Dependiences
 
 ##Homepage Design
 ![Home Page Desing](https://dl.dropboxusercontent.com/u/15590155/Home-PJF160-D1.png)
->>>>>>> 9ef2b2e1bb3dfca1a732c1989780f493d8b56e4b
