@@ -1,9 +1,51 @@
 .pill {
 	border-radius: @pill;
+	overflow: hidden;
+}
+//mixin for chevon circles
+.circle(@line_height:1em; @bg_color) {
+	border-radius: 100%;
+	width:@line_height;
+	height:@line_height;
+	line-height: @line_height;
+	text-align: center;
+	background: @bg_color;
 }
 
-i.circle {
-	border-radius: 100%;
-	background: #000;
-	padding:0.5em;
+//Mixin - Pill Button 
+.pill-button(@bg_color:@purple,@text_color:#fff ,@icon_bg:@yellow,@icon_color:@purple-dark){
+	border-radius: @pill;
+	background: @bg_color;
+	padding: 0.5em 0.7em 0.5em 1em;
+	border:0px;
+	text-shadow:none;
+	box-shadow: none;
+	span {
+	color:@text_color;
+	margin: 0 0.2em 0 0;
+	line-height: 3em;
+	padding: 1em 2em 1em 1em ;
+	}
+	i.circle {
+		color:@icon_color;
+		float:right; 
+		.circle(2.8em, @icon_bg)
+	}
+}
+.btn-purple,
+.btn-default {
+	.pill-button(@purple,#fff,@yellow,@purple-dark)
+}
+.btn-default:hover { background: @purple-dark;}
+
+.btn-cyan {
+	.pill-button(@cyan,#fff,@cyan-dark,@purple-dark)
+
+}
+.btn-orange {
+	.pill-button(@orange,#fff,@orange-dark,#fff)
+}
+
+.btn-dark {
+	.pill-button(@cyan,#fff,@cyan-dark,@purple-dark)
 }
