@@ -8,23 +8,10 @@
         <link rel="stylesheet" href="/skin.css">
     </head>
     <body>
-        <header id="primary-nav" class="row navbar-default">
-            <div class="container">
-                <nav class="navbar  navbar-static-top">
-                    <div id="logo" class='col-lg-3'>MaxConnect</div>
-                    <ul  class="nav nav-pills col-lg-5" >
-                        <li><a href="#">Latest</a></li>
-                        <li><a href="#">Tools & resources</a></li>
-                        <li><a href="#">Job Search</a></li>
-                        <li><a href="#">About us</a></li>
-                    </ul>
-                    <ul id="login" class="col-lg-4 nav nav-pills pull-right">
-                        <li><a href="#"><i class="glyphicon glyphicon-plus"></i><span>Login</span></a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-plus"></i><span>Registor</span></a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+
+        @@include('primary-nav.html')
+
+        
         <div class="jumbotron">
             <div class="container">
                 <h1 class="text-center">Finding Jobs,<br> Changing Lives</h1>
@@ -39,21 +26,8 @@
             </div>
         </div>
 
-        <div id="color-nav" class='center-link container-fluid'>
-            <div class='row'>
-                <nav class="navbar ">
-                    <ul  class="nav nav-pills" >
-                        <li class="col-lg-2"><a href="#"><span>How We Help You </span><i class="glyphicon glyphicon-menu-right circle"></i></a></li>
-                        <li class="col-lg-2"><a href="#"><span>Getting Started </span><i class="glyphicon glyphicon-menu-right circle"></i></a></li>
-                        <li class="col-lg-2"><a href="#"><span>My Profile      </span><i class="glyphicon glyphicon-menu-right circle"></i></a></li>
-                        <li class="col-lg-2"><a href="#"><span>My Resume       </span><i class="glyphicon glyphicon-menu-right circle"></i></a></li>
-                        <li class="col-lg-2"><a href="#"><span>Job Alerts      </span><i class="glyphicon glyphicon-menu-right circle"></i></a></li>
-                        <li class="col-lg-2"><a href="#"><span>Talk to us      </span><i class="glyphicon glyphicon-menu-right circle"></i></a></li>
+        @@include('color-nav.html')
 
-                    </ul>
-                </nav>
-            </div>
-        </div>
         <div class='container big-box'>
             <div class='row'>
                 <h1 class="col-lg-6">Just for you</h1>
@@ -124,27 +98,8 @@
                 </div>
             </div>
         </div>
-        <div class='row purple_bg'>
-        <footer>
-        <div class="container">
-            <img src='house.gif'><span>MAX Employment</span>
-            <p class="subheading">
-            Finding jobs, changing lives lorem ipsum do
-            </p>
-        </div>
-        </footer>
-        <div class="container">
-            <ul>
-                <li><a href="#">Copyright</a></li>
-                <li><a href="#">Pricacy</a></li>
-                <li><a href="#">Admin</a></li>
-                <li><a href="#">Sitemap</a></li>
-                <li><a href="#">Max sites</a></li>
-                <li><a href="#">1800 289 </a></li>
-                <li><a href=""></a></li>
-            </ul>
-        </div>
-        </div>
-        <script src="/assets/js/main.js"></script>
+        
+        @@include('footer.html')
+        
     </body>
 </html>
