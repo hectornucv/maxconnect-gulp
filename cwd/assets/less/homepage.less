@@ -1,0 +1,49 @@
+.purple_bg {
+	background: @purple-dark;
+}
+.grey_bg {
+	background: @grey;
+}
+
+#todays_tips {
+	background: @purple-dark;
+	color:#fff;
+	padding: 8em 0em;
+	.subheading {
+		color:@purple;
+		font-weight: bold;
+	}
+	h1 {
+		.heading(0 0 0.5em 0,#fff)
+	}
+}
+#job_talk {
+	h1 {
+		.heading(2em 0 0.7em 0,@purple-dark)
+	}
+}
+
+.speak-box {
+	background: #fff;
+	padding:2em;
+	small {
+		font-weight: bold;
+		color:@purple;
+		font-size:1.1em;
+		margin: 0 0 1em 0em;
+		display: block;
+	}
+	p { 
+		font-size: 1.7em;
+		font-weight: bold;
+		color:@purple-dark;
+		
+	}
+	.meta {
+		font-weight: bold;
+		i {
+			color:#fff;
+			.circle(2em,@purple)
+		}
+	}
+}
