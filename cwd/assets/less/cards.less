@@ -54,7 +54,7 @@
 /*=========================================
 =            Card Blog-Article            =
 =========================================*/
-.card-article(@bg_color,@text_color,@button_color,@small_color,@button_text) {
+.card-article(@bg_color,@text_color,@button_color,@header_color,@button_text) {
 	background: @bg_color;
 	display: block;
 	float:left;
@@ -62,13 +62,13 @@
 	position: relative;
 	h1 {
 		font-weight: bold;
-		color:@small_color;
-		font-size:1em;
+		color:@header_color;
+		font-size:2em;
 		margin: 0 0 1em 0em;
 		display: block;
 	}
 	.meta {
-		
+
 	}
 	p { 
 		font-size: 1.4em;
@@ -92,7 +92,7 @@
 	}
 }
 .card-article {
-	.card-article(#fff,@purple-dark,@purple,@purple-dark,@purple-dark)
+	.card-article(#fff,@purple-dark,@purple,@purple,@purple-dark)
 }
 
 
