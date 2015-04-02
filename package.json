@@ -1,6 +1,6 @@
 {
   "name": "maxconnect-Build-Tool",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "a tool to generate pegboard skin",
   "main": "gulpfile.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/stagfoo/maxconnect-gulp.git"
   },
-  "author": "Alex King @stagfoo",
+  "authors": "Alex King @stagfoo, David Howard @DavidPeterHoward",
   "license": "all rights reserved",
   "bugs": {
     "url": "https://github.com/stagfoo/maxconnect-gulp/issues"

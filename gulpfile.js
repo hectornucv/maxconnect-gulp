@@ -112,14 +112,17 @@ gulp.task('js', function() {
 gulp.task('less', function() {
    return gulp.src(less_files)
    .pipe(concat('skin.css'))
-   .pipe(plumber())
-   .pipe(less())
+
+  .pipe(less().on('error', function(err){
+        gutil.log(err);
+        this.emit('end');
+    }))
+
    .pipe(autoprefixer({
              browsers: [
             'last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4','opera 12'],
             cascade: false
     }))
-   .pipe(gulp.dest('render/'))
    .pipe(reload({ stream:true }))
 });
 
@@ -185,7 +188,7 @@ gulp.task('watcher', ['less'], function() {
         index: "/templates/layouts/default.html"
     });
 
-   gulp.watch("cwd/assets/less/*.less", ['less']);
+   gulp.watch("cwd/assets/less/*.less", ['less']).on('error', gutil.log);
    gulp.watch("cwd/**/*.html", ['include']);
 });
 
