@@ -113,7 +113,7 @@ gulp.task('less', function() {
    return gulp.src(less_files)
    .pipe(concat('skin.css'))
 
-  .pipe(less().on('error', function(err){
+  .pipe(cache(less()).on('error', function(err){
         gutil.log(err);
         this.emit('end');
     }))
