@@ -123,6 +123,7 @@ gulp.task('less', function() {
             'last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4','opera 12'],
             cascade: false
     }))
+   .pipe(gulp.dest('render/'))
    .pipe(reload({ stream:true }))
 });
 
@@ -211,7 +212,7 @@ gulp.task('watcher', ['less'], function() {
 
 gulp.task('prod', ['include', 'imagemin', 'js', 'less', 'minify-js', 'minify-css']);
 
-gulp.task('default', ['clean', 'serve', 'include', 'js', 'imagemin']);
+gulp.task('default', ['include', 'less', 'js', 'imagemin']);
 
 gulp.task('watch', ['watcher']);
 
