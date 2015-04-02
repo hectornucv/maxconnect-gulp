@@ -1,6 +1,6 @@
 {
   "name": "maxconnect-Build-Tool",
-  "version": "0.0.5",
+  "version": "0.0.4",
   "description": "a tool to generate pegboard skin",
   "main": "gulpfile.js",
   "scripts": {
