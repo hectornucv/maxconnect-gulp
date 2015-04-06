@@ -1,0 +1,43 @@
+/*=========================================
+=            Common Search box            =
+= Example location - homepage center
+=========================================*/
+.search-box {
+	background:@purple-dark;
+	display: block;
+	padding: 0.3em 0em 0.3em 0.3em;
+	border-radius: @pill;
+
+	overflow: hidden;
+	button {
+		display: inline-block;
+		background: none;
+		float:right;
+		margin:0 1em 0 0em;
+	}
+	input:focus {
+		outline: none;
+		border:0px;
+		box-shadow: none;
+	}
+	input:focus + button i {
+		color:#fff;
+		transition:0.3s all ease;
+	}
+	input {
+		background: none;
+		border:0px;
+		color:#fff;
+		line-height: 2em;
+		display: inline-block;
+		margin: 0.8em 0 0 0;
+		font-weight: bold;
+
+	}
+	i.circle {
+		color:@purple-dark;
+		transition:0.3s all ease;
+		.circle(3em, @yellow)
+	}
+
+}
