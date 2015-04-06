@@ -32,7 +32,7 @@ var
 var less_files = [
     'bower_components/bootstrap/less/variables.less',
     'bower_components/bootstrap/less/*.less',
-    'cwd/assets/less/*.less',
+    'cwd/assets/less/*.less'
     ]
 var html_files = [
     'render/templates/pages/*.html',
@@ -186,11 +186,12 @@ gulp.task('watcher', ['less'], function() {
 
     browserSync({
         server: "./render/",
-        index: "/templates/layouts/default.html"
+        index: "/templates/layouts/blog.html"
     });
 
    gulp.watch("cwd/assets/less/*.less", ['less']).on('error', gutil.log);
    gulp.watch("cwd/**/*.html", ['include']);
+   gulp.watch("cwd/assets/images/*.svg", ['imagemin']);
 });
 
 
