@@ -51,7 +51,11 @@
     "gulp-sourcemaps": "^1.5.1",
     "gulp-w3cjs": "^0.3.0",
     "gulp-util": "^3.0.4",
-    "gulp-remember": "*"
+    "gulp-remember": "*",
+    "gulp-watch": "*",
+    "gulp-livereload": "*"
+
+
 
   }
 }
