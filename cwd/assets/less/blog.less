@@ -1,18 +1,42 @@
 #blog {
-	background: @white;
 	color:@purple-dark;
 	font-weight: 600;
 	padding: 8em 0em;
-	.subheading {
-		color:@purple;
-		font-weight: bold;
-	}
 	h1 {
-		.heading(0 0 0.5em 0,#fff)
+		.heading(0 0 1em 0,@purple-dark) 
+	}
+	.paragraph-dark {
+	 	padding-top: 3%;
 	}
 }
 
-.sidebar-lighter {
-	font-weight: 400;
-	color: @purple;
+.sidebar-blog {
+	ul {
+		margin-top: 30px;
+		list-style-type: none;
+		text-decoration: none;
+		padding-left: 0;
+		li {
+					padding-bottom: 5px;
+		}
+	}
+}
+
+.share-icons {
+	padding-top: 1%;
+	ul {
+		display: inline;
+		padding: 0;
+	}
+	li {
+
+	}
+}
+
+.article-end {
+	margin-top: 50px;
+}
+
+.grey_bg {
+	background: @grey;
 }

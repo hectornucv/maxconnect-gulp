@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home .:. Maxconnect</title>
+        <title>Blog .:. Maxconnect</title>
         <link rel="stylesheet" href="/skin.css">
     </head>
     <body>
@@ -18,14 +18,63 @@
 
 
     </div>
-    <section id="blog" class="jumbotron">
+    <section id="blog">
         <article class="container">
-     
-        @@include('blog/sidebar-blog.html')
+            <div class="row">
+                <div class="col-md-10">
+                    <h1>5 seemingly silly questons that can make or break your interview</h1>
+                </div>
+
+            </div>
+             <div class="row">
+                <div class="col-md-4">
+              @@include('blog/sidebar-details.html')
+              @@include('blog/sidebar-share.html')
+                </div>
+                <div class="col-md-6">
+<h2>It’s true – in terviews can be intimidating, and even the best of us get tongue-tied. But you’ll be happy to hear that there are a few dos and don’ts that can help when you’re in the hotseat. Here’s are the five questions you’re likely to be asked, why they’re asking... and what they really want to hear. </h2>
 
 
+<p class="paragraph-dark">1. Tell us about yourself?</p>
+<p>In most cases, you’ll be asked to do this straight off the bat. It might seem overwhelming at first, but the interviewer is simply after a brief look into your work history, education, skills and experience. Or in other words... an intro to you! How you compose yourself under pressure can be make or break, so think about your answer in advance.</p>
+
+<p><span class="paragraph-dark">DO:</span> Keep your answer to around 3 minutes, give or take.</p>
+<p><span class="paragraph-dark">DO:</span> Cover your most recent or relevant work history in detail.</p>
+<p><span class="paragraph-dark">DO:</span> Focus on your skills and experience, but feel free to mention positive personal details.</p>
+<p><span class="paragraph-dark">DO NOT:</span> Raise anything that could be viewed as inappropriate.</p>
+
+<p class="paragraph-dark">2. What brings you to our company?</p>
+<p>At this point, the interviewer would like to know that you’re motivated, interested in the organisation and not just “doing the rounds”. This is a great opportunity to show that you’ve spent some time getting to know the company.</p>
+<div class="row article-end">
+    <div class="col-md-8">
+                <a href="" class="btn btn-default pill-button pull-left">
+                <span>Look For Jobs</span><i class="glyphicon glyphicon-chevron-right circle"></i>
+                </a>
+</div>
+
+                </div>
+
+</div>
         </article>
     </section>
+        <div class='row grey_bg'>
+        <div id="just_for_you" >
+            <div  class='container'>
+                <h1 class="col-lg-6">Just for you</h1>
+                <a href="" class="btn btn-default pill-button pull-right">
+                <span>View all</span><i class="glyphicon glyphicon-chevron-right circle"></i>
+                </a>
+            </div>
+            <div class='container news-box'>
+
+               @@include('collections/blog/card-article.html')
+               @@include('collections/blog/card-article.html')
+               @@include('collections/blog/card-article.html')
+
+                
+            </div>
+            </div>
+        </div>
 
 
     @@include('footer.html')

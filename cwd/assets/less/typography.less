@@ -5,10 +5,52 @@
 	font-weight: bold;
 }
 
+.sub-heading(@margin:0 0 1em 0,@color){
+	color: @color;
+	margin: @margin;
+	font-size: 1.7em;
+	font-weight: bold;
+	line-height: 1.3em;
+}
+
+.paragraph(@weight, @color) {
+	color: @color;
+	font-weight: @weight;
+	font-size: 1em;
+	line-height: 150%;
+}
+
+.paragraph-dark {
+	.paragraph(bold, @purple-dark)
+}
+
+.paragraph-light {
+	.paragraph(400, @purple)
+}
+
+p {
+	.paragraph(400, @purple)
+}
 
 h1 {
 	.heading(0 0 1em 0,@purple-dark)
 }
+
+
 h2 {
+	.sub-heading(0 0 1em 0,@purple)
+}
+
+h3 {
 
 }
+
+h5 {
+	color:@purple-dark;
+	font-weight: bold;
+}
+
+h6 {
+
+}
+
