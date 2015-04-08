@@ -2,12 +2,13 @@
 =            Common Search box            =
 = Example location - homepage center
 =========================================*/
-.search-box {
-	background:@purple;
+.search-box(@background,@text-color,,@circle-color,@icon-color) {
+	box-shadow: none;
+	background:@background;
 	display: block;
 	padding: 0.3em 0em 0.3em 0.3em;
 	border-radius: @pill;
-	color: @white;
+	color: @text-color;
 
 	overflow: hidden;
 	button {
@@ -26,6 +27,7 @@
 		transition:0.3s all ease;
 	}
 	input {
+		box-shadow: none;
 		background: none;
 		border:0px;
 		color:#fff;
@@ -36,9 +38,17 @@
 
 	}
 	i.circle {
-		color:@purple-dark;
+		color:@icon-color;
 		transition:0.3s all ease;
-		.circle(3em, @yellow)
+		.circle(3em, @circle-color)
 	}
+}
 
+
+
+.search-box {
+	.search-box(@purple,@white,@yellow,@purple-dark)
+}
+.search-box.purple {
+	.search-box(@white,@purple,@yellow,@purple-dark)
 }
