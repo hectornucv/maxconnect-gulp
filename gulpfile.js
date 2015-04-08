@@ -193,6 +193,20 @@ gulp.task('watcher', ['less'], function() {
    gulp.watch("cwd/**/*.html", ['include']);
    gulp.watch("cwd/assets/images/*.svg", ['imagemin']);
 });
+/*===============================
+=           Move Folders         =
+===============================*/
+
+var fonts = [
+        'bower_components/bootstrap/fonts/*'
+    ];
+
+gulp.task('fonts', function(){
+  // the base option sets the relative root for the set of files,
+  // preserving the folder structure
+  gulp.src(fonts)
+  .pipe(gulp.dest('render/fonts'));
+});
 
 
 /*======================================
@@ -213,7 +227,7 @@ gulp.task('watcher', ['less'], function() {
 
 gulp.task('prod', ['include', 'imagemin', 'js', 'less', 'minify-js', 'minify-css']);
 
-gulp.task('default', ['include', 'less', 'js', 'imagemin']);
+gulp.task('default', ['include', 'less', 'js', 'imagemin','fonts']);
 
 gulp.task('watch', ['watcher']);
 
