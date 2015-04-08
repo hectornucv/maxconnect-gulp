@@ -1,0 +1,57 @@
+
+.job-card {
+	background-color: #EBEFEA; 
+	
+	display: block;
+	
+	header{
+		padding: 1em;
+		font-size: 1em;
+		h1 {
+			display: block;
+			font-size:1em;
+
+		}
+		.meta {
+			display: block;
+			font-size: 1em;
+		}
+	}
+
+	footer{
+	margin-top: 1px;
+	padding: 1em;
+		
+	}
+	footer:hover {
+		background: @grey;
+	}
+	
+	section{
+		border-width: 1em;
+		border-color: white;
+		padding: 1em;
+		p{
+			color:@grey-medium;
+		}
+		strong{
+			color:@blue-titles;
+		}
+	}
+}
+
+i.job-icon.ft {
+	display: inline-block;
+	text-transform: uppercase;
+	font: 15px arial, sans-serif;
+	color:#fff;
+	font-weight: bold;
+	float: right;
+	.circle(4em,@purple)
+}
+
+.job-card i{
+	display: inline-block;
+	float: right;
+	.circle(2em,@purple)
+}
