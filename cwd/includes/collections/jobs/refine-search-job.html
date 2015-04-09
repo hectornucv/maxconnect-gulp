@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingLevel1">
+        <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordionTop" href="#@@idLevel1" aria-expanded="false" aria-controls="@@idLevel1">
+        @@label
+        </a>
+        </h4>
+    </div>
+    <div id="@@idLevel1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLevel1">
+        <div class="panel-body">
+            @@include('collections/jobs/sidebar-job-filter-level2.html',{
+                    "idLevel1":"item1-level2",
+                    "label":"Item #1 Level 2"
+                    "idParent":""
+                    })
+        </div>
+    </div>
+</div>

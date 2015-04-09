@@ -1,57 +1,107 @@
-
+#jobs{
+	padding-top: 2em;
+}
 .job-card {
-	background-color: #EBEFEA; 
 	
 	display: block;
+	margin-bottom: 2em; 
+	border-radius: .5em ;
+	overflow: hidden;
 	
 	header{
-		padding: 1em;
+			background-color: @grey; 
 		font-size: 1em;
+		padding: 1.5em;
+		
 		h1 {
 			display: block;
-			font-size:1em;
-
+			font-size:2em;
+  			margin: 0 0 .5em 0;
 		}
 		.meta {
 			display: block;
-			font-size: 1em;
+			i{
+				margin: 0 .2em 0 0;
+			}
+			a {
+				color:@purple;
+			}
 		}
 	}
-
-	footer{
-	margin-top: 1px;
-	padding: 1em;
-		
+	div.panel-body {
+		padding: 0px;
+		border-top:0px !important;
 	}
-	footer:hover {
-		background: @grey;
-	}
-	
 	section{
-		border-width: 1em;
-		border-color: white;
-		padding: 1em;
+		background-color: @grey; 
+		border-top: 1px solid #fff;
+		padding: 1.5em;
 		p{
-			color:@grey-medium;
+			color:@grey-darkest;
 		}
 		strong{
-			color:@blue-titles;
+			color:@purple-dark;
 		}
 	}
+	footer{
+		border-top: 3px solid #fff;
+		padding: 0;
+		a{
+			background-color: @grey; 
+		display: block;
+		padding: 1.5em;
+			color:@purple-dark;
+			font-weight: bold;
+		}
+		i.circle{
+			display: inline-block;
+			font-size: .7em;
+			.circle(2em;@purple)
+		}
+	}
+	footer a:hover {
+		background: @grey-dark;
+	}
+	
+	
 }
 
-i.job-icon.ft {
+i.job-icon.ft,
+i.job-icon.fulltime {
 	display: inline-block;
 	text-transform: uppercase;
 	font: 15px arial, sans-serif;
 	color:#fff;
 	font-weight: bold;
 	float: right;
-	.circle(4em,@purple)
+	.circle(3em,@purple)
 }
 
-.job-card i{
+i.job-icon.cas,
+i.job-icon.cassual {
+	display: inline-block;
+	text-transform: uppercase;
+	font: 15px arial, sans-serif;
+	color:#fff;
+	font-weight: bold;
+	float: right;
+	.circle(3em,@cyan)
+}
+
+i.job-icon.pt,
+i.job-icon.parttime {
+	display: inline-block;
+	text-transform: uppercase;
+	font: 15px arial, sans-serif;
+	color:#fff;
+	font-weight: bold;
+	float: right;
+	.circle(3em,@yellow)
+}
+
+.job-card i.circle{
 	display: inline-block;
 	float: right;
-	.circle(2em,@purple)
+	color:#fff;
+	.circle(1.5em,@purple)
 }
