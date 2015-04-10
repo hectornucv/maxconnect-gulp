@@ -29,9 +29,11 @@
                 <div class="col-lg-3">
                     @@include('collections/jobs/sidebar-job-filter.html')
                 </div>
+                    @@include('collections/jobs/search-criteria-job.html')
+
                 <div class="col-lg-9">
-                        
                     
+                    <div class="row">
                     @@include('collections/jobs/card-job.html',{
                     "job-type":"ft",
                     "id":"1"
@@ -44,7 +46,7 @@
                     "job-type":"cas",
                     "id":3
                     })
-
+                </div>
                     
                </div>
             
