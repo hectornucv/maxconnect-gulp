@@ -10,7 +10,99 @@
     <body>
         @@include('primary-nav.html')
         
-        [pbtemplate]
+       
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="text-center">Finding Jobs,<br> Changing Lives</h1>
+                <div class="col-lg-4 col-md-offset-4">
+        @@include('search-box.html')
+                </div>
+            </div>
+        </div>
+        @@include('color-nav.html')
+        <div class='row grey_bg'>
+        <div id="just_for_you" >
+            <div  class='container'>
+                <h1 class="col-lg-6">Just for you</h1>
+                <a href="" class="btn btn-default pill-button pull-right">
+                <span>View all</span><i class="glyphicon glyphicon-chevron-right circle"></i>
+                </a>
+            </div>
+            <div class='container news-box'>
+
+               @@include('collections/blog/card-article.html')
+               @@include('collections/blog/card-article.html')
+               @@include('collections/blog/card-article.html')
+               @@include('collections/blog/card-article.html')
+               @@include('collections/blog/card-article.html')
+               @@include('collections/blog/card-article.html')
+               @@include('collections/blog/card-article.html')
+            </div>
+            </div>
+        </div>
+        <section id="todays_tips" class="jumbotron">
+            <article class="container">
+            <div class="col-lg-4">
+                <h1>Today's Tip</h1>
+                <p class="subheading">New threats. Amazing Spider-Man is the cornerstone of the Marvel Universe. Now with a new outlook on life.
+                </p>
+                <p>New threats. Amazing Spider-Man is the cornerstone of the Marvel Universe.
+                </p>
+                <a href="" class="btn btn-default pill-button">
+                <span>Read More</span><i class="glyphicon glyphicon-chevron-right circle"></i>
+                </a>
+            </div>
+            <div class="col-lg-8">
+            <div class="video-player">
+                <!-- <i class="glyphicon glyphicon-triangle-right circle"></i> -->
+              
+             <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JAUoeqvedMo" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+            </div>
+            </article>
+        </section>
+        <div class='row grey_bg'>
+            <div id="job_talk" class='container'>
+                <h1>Job Talk</h1>
+                <div class='col-lg-4'>
+                    <div class="card-chatbubble white">
+                        <small>You're not alone</small>
+                        <p>New threats. Amazing Spider-Man is the cornerstone of the Marvel Universe. Now with a new outlook on life.</p>
+                        <footer class="meta">
+                            <span class="pull-left">Follow Us:</span>
+                            <i class="pull-right glyphicon glyphicon-knight circle"></i>
+                            <i class="pull-right glyphicon glyphicon-knight circle"></i>
+                        </footer>
+                        <i class="tri"></i>
+                    </div>
+                </div>
+                <div class='col-lg-4'>
+                    <div class="card-chatbubble  purple">
+                        <small>Facebook</small>
+                        <p>New threats. Amazing Spider-Man is the cornerstone of the Marvel Universe. Now with a new outlook on life.</p>
+                        <footer class="meta">
+                            <span class="pull-left">Read More</span>
+                            <i class="pull-right glyphicon glyphicon-chevron-right circle"></i>
+                        </footer>
+                        <i class="tri"></i>
+                    </div>
+                </div>
+                <div class='col-lg-4'>
+                    <div class="card-chatbubble cyan">
+                        <small>Twitter</small>
+                        <p>New threats. Amazing Spider-Man is the cornerstone of the Marvel Universe. Now with a new outlook on life.</p>
+                        <footer class="meta">
+                            <span class="pull-left">Read More</span>
+                            <i class="pull-right glyphicon glyphicon-chevron-right circle"></i>
+                        </footer>
+                        <i class="tri"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         @@include('footer.html')
     </body>
