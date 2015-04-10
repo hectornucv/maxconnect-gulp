@@ -8,9 +8,7 @@
         li {} 
         a { color: @purple-dark; }
     }
-    .center-navigation {
-    	
-    }
+
 }
 
 #color-nav {
@@ -96,3 +94,253 @@
 .max-logo-container {
 	width: 75%;
 }
+
+#edit-nav {
+
+margin-bottom: 4em;
+margin-top: 2em;
+padding-bottom: 6em;
+	ul {
+
+		li {
+		margin: 0 1em 0 1em;
+
+			a {
+				.paragraph(bold, @white);
+				
+				padding: 1.5em;
+			}
+		}
+	}
+}
+	/*
+.triangle-menu:nth-child(1) {
+background: @grey;
+	:hover {
+		background: red;
+	}
+	:active {
+		background: red;
+	}
+}
+.triangle-menu:nth-child(1):hover:after {
+	border-color: transparent transparent red red;
+
+}
+
+}
+
+.triangle-menu::after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0;
+	height: 0;
+	left: 50%;
+	margin-left: -1.45em;
+	box-sizing: border-box;
+	border: 1em solid black;
+	transform-origin: 0 0;
+	transform: rotate(-45deg);
+}
+
+.triangle(bottom, 50px 50px black )
+
+
+*/
+
+.grey-border {
+	border-bottom: 1px solid @grey;
+	margin-bottom: 4em;
+}
+
+@square: 50px;
+@color: blue;
+
+.triangle-menu {
+  width: @square*1;
+  height: @square;
+  line-height: 25px;
+  background-color: blue;
+  position: relative;
+  margin-left: 50px;
+
+
+
+	a {
+		:hover {
+			background-color: green;
+		}
+			:focus, :active, :visited {
+			border-color: green transparent transparent transparent;
+
+	}
+		}
+
+}
+
+
+
+
+.triangle-menu:nth-child(1) {
+background: @purple-alt;
+
+	:hover {
+		background: @purple-alt;
+	}
+	:active {
+		background: @purple-alt;
+	}
+	&:after {
+	 position: absolute;
+     left: 25%;
+     top: 40px;
+     z-index: -1;
+	     .triangle(bottom,45px,45px,@purple-alt);
+	}
+
+
+&:hover {
+	background: @purple-alt;
+	&:after {
+			border-color: @purple-alt transparent transparent transparent;
+
+	}
+}
+	li > a:hover {
+		text-decoration: none;
+		background-color: @purple-alt;
+	}
+}
+
+
+.triangle-menu:nth-child(2) {
+background: @yellow;
+
+	:hover {
+		background: @yellow;
+	}
+	:active {
+		background: @yellow;
+	}
+	&:after {
+	 position: absolute;
+     left: 25%;
+     top: 40px;
+     z-index: -1;
+	     .triangle(bottom,45px,45px,@yellow);
+	}
+
+
+&:hover {
+	background: @yellow;
+	&:after {
+			border-color: @yellow transparent transparent transparent;
+
+	}
+}
+	li > a:hover {
+		text-decoration: none;
+		background-color: @purple;
+	}
+
+}
+
+
+.triangle-menu:nth-child(3) {
+background: @cyan;
+
+	:hover {
+		background: @cyan;
+	}
+	:active {
+		background: @cyan;
+	}
+	&:after {
+	 position: absolute;
+     left: 25%;
+     top: 40px;
+     z-index: -1;
+	     .triangle(bottom,45px,45px,@cyan);
+	}
+
+
+&:hover {
+	background: @cyan;
+	&:after {
+			border-color: @cyan transparent transparent transparent;
+
+	}
+}
+	li > a:hover {
+		text-decoration: none;
+		background-color: @cyan;
+	}
+}
+
+
+.triangle-menu:nth-child(4) {
+background: @orange;
+
+	:hover {
+		background: @orange;
+	}
+	:active {
+		background: @orange;
+	}
+	&:after {
+	 position: absolute;
+     left: 25%;
+     top: 40px;
+     z-index: -1;
+	     .triangle(bottom,45px,45px,@orange);
+	}
+
+
+&:hover {
+	background: @orange;
+	&:after {
+			border-color: @orange transparent transparent transparent;
+
+	}
+}
+	li > a:hover {
+		text-decoration: none;
+		background-color: @orange;
+	}
+}
+
+
+.triangle-menu:nth-child(5) {
+background: @purple;
+
+	:hover {
+		background: @purple;
+	}
+	:active {
+		background: @purple;
+	}
+	&:after {
+	 position: absolute;
+     left: 25%;
+     top: 40px;
+     z-index: -1;
+	     .triangle(bottom,45px,45px,@purple);
+	}
+
+
+&:hover {
+	background: @purple;
+	&:after {
+			border-color: @purple transparent transparent transparent;
+
+	}
+}
+	li > a:hover {
+		text-decoration: none;
+		background-color: @purple;
+	}
+}
+
+
+
