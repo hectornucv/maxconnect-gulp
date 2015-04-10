@@ -1,8 +1,53 @@
+@font-face {
+	font-family: 'Avenir-Heavy';
+	src: url('../fonts/Avenir-Heavy.eot');
+	src: url('../fonts/Avenir-Heavy.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Avenir-Heavy.woff') format('woff'),
+		url('../fonts/Avenir-Heavy.ttf')  format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Avenir-Book';
+	src: url('../fonts/Avenir-Book.eot');
+	src: url('../fonts/Avenir-Book.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Avenir-Book.woff') format('woff'),
+		url('../fonts/Avenir-Book.ttf')  format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Avenir';
+	src: url('../fonts/Avenir-Black.eot');
+	src: url('../fonts/Avenir-Black.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Avenir-Black.woff') format('woff'),
+		url('../fonts/Avenir-Black.ttf')  format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Avenir';
+	src: url('../fonts/Avenir-Light.eot');
+	src: url('../fonts/Avenir-Light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Avenir-Light.woff') format('woff'),
+		url('../fonts/Avenir-Light.ttf')  format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+
+
+
+
 .heading(@margin:0 0 1em 0,@color){
 	color: @color;
 	margin: @margin;
 	font-size: 4em;
 	font-weight: bold;
+	font-family: 'Avenir',Helvetica,sans-serif;
 }
 
 .sub-heading(@margin:0 0 1em 0,@color){
@@ -11,6 +56,7 @@
 	font-size: 1.5em;
 	font-weight: bold;
 	line-height: 1.3em;
+	font-family: 'Avenir',Helvetica,sans-serif;
 }
 
 .paragraph(@weight, @color) {
