@@ -13,8 +13,8 @@
 	.pill-button(@orange,#fff,@orange-dark,#fff)
 }
 
-.btn-dark {
-	.pill-button(@cyan,#fff,@cyan-dark,@purple-dark)
+.btn-purple-dark {
+	.pill-button(@purple-dark,#fff,@yellow,@purple-dark)
 }
 
 
@@ -55,3 +55,26 @@
 			.circle(2.8em, @icon_bg)
 		}
 }
+
+.btn-small(@bg_color:@purple,@text_color:#fff ,@icon_color:#fff,@padding:1em) {
+		padding: @padding;
+		cursor: pointer;
+		border-radius: 0.3em;
+		font-weight: bold;
+		display: inline-block;
+		background: @bg_color;
+		color:@text_color;
+		i {
+			margin: 0 0em 0 0.5em;
+			color: @icon_color;
+
+		}
+}
+.btn-small {
+	.btn-small(@purple-dark,#fff,#fff,0.5em 0.5em 0.5em 1em);
+}
+.btn-small:hover {
+	.btn-small(@purple,#fff,#fff,0.5em 0.5em 0.5em 1em);
+	text-decoration: none;
+}
+
