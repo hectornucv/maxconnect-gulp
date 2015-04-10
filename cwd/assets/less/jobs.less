@@ -1,0 +1,159 @@
+/*=========================================
+=      Card Jobs           =
+=========================================*/
+.job-card(@primary_color, @secundary_color, @bg_color:@grey, @bg_hover_color:@grey-dark) {
+	
+	display: block;
+	margin-bottom: 2em; 
+	border-radius: .5em ;
+	overflow: hidden;
+	
+	header{
+			background-color: @bg_color; 
+		font-size: 1em;
+		padding: 1.5em;
+		
+		h1 {
+			color: @primary_color;
+			display: block;
+			font-size:2em;
+  			margin: 0 0 .5em 0;
+		}
+		.meta {
+			display: block;
+			i{
+				color: @primary_color;
+				margin: 0 .2em 0 0;
+			}
+			a {
+				color:@secundary_color;
+			}
+		}
+		strong{
+			color: @primary_color;
+		}
+	}
+	div.panel-body {
+		padding: 0px;
+		border-top:0px !important;
+	}
+	section{
+		background-color: @bg_color; 
+		border-top: 1px solid #fff;
+		padding: 1.5em;
+		p{
+			color:@grey-darkest;
+		}
+		strong{
+			color:@primary_color;
+		}
+	}
+	footer{
+		border-top: 3px solid #fff;
+		padding: 0;
+		a{
+			background-color: @bg_color; 
+		display: block;
+		padding: 1.5em;
+			color:@primary_color;
+			font-weight: bold;
+		}
+		i.circle{
+			display: inline-block;
+			font-size: .7em;
+			.circle(2em;@secundary_color)
+		}
+	}
+	footer a:hover {
+		background: @bg_hover_color;
+	}
+	
+	
+}
+
+.job-card.jobs{
+	.job-card(@purple-dark, @purple)
+
+}
+.job-card.candidates{
+	.job-card(@yellow-dark, @yellow,@cyan,@cyan-dark)
+
+}
+
+#jobs{
+	padding-top: 2em;
+}
+
+
+i.job-icon.ft,
+i.job-icon.fulltime {
+	display: inline-block;
+	text-transform: uppercase;
+	font: 15px arial, sans-serif;
+	color:#fff;
+	font-weight: bold;
+	float: right;
+	.circle(3em,@purple)
+}
+
+i.job-icon.cas,
+i.job-icon.cassual {
+	display: inline-block;
+	text-transform: uppercase;
+	font: 15px arial, sans-serif;
+	color:#fff;
+	font-weight: bold;
+	float: right;
+	.circle(3em,@cyan)
+}
+
+i.job-icon.pt,
+i.job-icon.parttime {
+	display: inline-block;
+	text-transform: uppercase;
+	font: 15px arial, sans-serif;
+	color:#fff;
+	font-weight: bold;
+	float: right;
+	.circle(3em,@yellow)
+}
+
+.job-card i.circle{
+	display: inline-block;
+	float: right;
+	color:#fff;
+	.circle(1.5em,@purple)
+}
+
+
+#search_critera{
+	display: block;
+	margin: 1em 0em;
+	padding: 0;
+	.criteria {
+		text-align: right;
+		margin: 0;
+		padding: 0;
+	}
+
+	.label{
+		display: inline-block;
+		margin: 0px;
+		padding: 1em;
+		.label(@purple)
+
+	}
+
+	.label.active{
+		.label(@purple-dark)
+	}
+
+	label{
+		line-height: 1.5em;
+  		display: inline-block;
+  		vertical-align: text-top;
+		font-size: 1.30em; 
+		font-weight: lighter;
+		color: @purple-dark;
+	}
+}

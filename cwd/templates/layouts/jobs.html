@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home .:. Maxconnect</title>
+        <link rel="stylesheet" href="/skin.css">
+    </head>
+    <body>
+        @@include('primary-nav.html')
+        <div class="jumbotron purple_dark_bg">
+            <div class="container">
+                <h1 class="text-center">Finding Jobs,<br> Changing Lives</h1>
+                <div class="col-lg-4 col-md-offset-4">
+        @@include('search-box.html')
+                </div>
+            </div>
+        </div>
+        @@include('color-nav.html')
+        
+        <div class='row '>
+        
+                    @@include('collections/jobs/refine-search-job.html')
+                
+            <div id="jobs" class='container'>
+             
+                    
+                <div class="col-lg-3">
+                    @@include('collections/jobs/sidebar-job-filter.html')
+                </div>
+                    @@include('collections/jobs/search-criteria-job.html')
+
+                <div class="col-lg-9">
+                    
+                    <div class="row">
+                    @@include('collections/jobs/card-job.html',{
+                    "job-type":"ft",
+                    "id":"1"
+                    })
+                    @@include('collections/jobs/card-job.html',{
+                    "job-type":"pt",
+                    "id":"2"
+                    })
+                    @@include('collections/jobs/card-job.html',{
+                    "job-type":"cas",
+                    "id":3
+                    })
+                </div>
+                    
+               </div>
+            
+            </div>
+
+           
+        </div>
+       
+        @@include('footer.html')
+    </body>
+</html>

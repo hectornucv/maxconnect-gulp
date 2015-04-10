@@ -1,0 +1,107 @@
+
+.panel-default{
+	border-color: #fff;
+}
+.panel-rounded {
+	border-radius: 0.5em;
+	overflow: hidden;
+}
+.panel-group .panel{
+	border-radius: .5em .5em 0 0;
+}
+.panel {
+	.panel-heading {
+		padding:0;
+		a {
+			display: block;
+			background: @purple;
+			padding:1em;
+			color:#fff;
+			text-decoration: none;
+
+		}
+
+		a.collapsed {
+		background: @purple-dark;
+
+		}
+		a.collapsed i {
+
+			transform: rotate(90deg);
+			transition:0.3s all ease;
+			.circle(1.5em,@purple);
+		}
+		i{
+			font-size: .63em;
+			float: right;
+			transition:0.3s all ease;
+			.circle(1.5em,@purple-dark);
+		}
+
+	}
+}
+.panel.firstItem {
+		border-radius: .5em .5em 0 0;
+		overflow: hidden; 
+	}
+.panel.lastItem{
+		border-radius: 0 0 .5em .5em;
+		overflow: hidden; 
+	}
+.panel-group .panel + .panel{
+	margin-top: 0;
+}
+.panel-group .panel1 + .panel1{
+	margin-top: 3px;
+}
+.panel1{
+	.panel-heading {
+		padding:0;
+		a {
+			font-style: normal;
+			display: block;
+			background: @grey;
+			padding:1em;
+			color:@purple-dark;
+		}
+		a.collapsed {
+		background: @grey-dark;
+		}	
+
+		a.collapsed i {
+			transform: rotate(90deg);
+			transition:0.3s all ease;
+			.circle(1.5em,@purple);
+		}
+		i{
+			
+			color:#fff;
+			font-size: .63em;
+			float: right;
+			transition:0.3s all ease;
+			.circle(1.5em,@purple-dark);
+		}
+
+	}
+}
+
+.acordionTitle {
+	padding: 0.65em;
+	font-size: 1.6em;
+	font-weight:  bold;
+	color: @purple-dark;
+	label{
+	}
+}
+.panel-body{
+	padding: 0;
+}
+
+.lastLevel{
+color: @purple-dark;
+padding: 1em;	
+border-color: #fff;
+background: @grey;
+margin-top:3px; 
+}
+

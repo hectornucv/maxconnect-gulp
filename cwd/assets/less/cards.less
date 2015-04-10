@@ -23,7 +23,7 @@
 	.meta {
 		margin: 2em 0 0 0;
 		font-weight: bold;
-		border-top: solid 10px #CCC;
+		//border-top: solid 10px #CCC;
 		span {
 			font-size: 0.9em;
 			color:@button_text;
@@ -59,9 +59,14 @@
 	background: @bg_color;
 	display: block;
 	float:left;
-	padding: 2em 2em 1em 2em;
+	 padding: 2em 0em 0em 0em;
 	margin: 0 0 2em 0;
 	position: relative;
+	.content {
+		padding: 1em;
+		float:left;
+		display: inline-block;
+	}
 	h1 {
 		font-weight: bold;
 		color:@header_color;
@@ -88,13 +93,28 @@
 	footer {
 		margin: 2em 0 0 0;
 		font-weight: bold;
+
 		a {
-			display: block;
+			display: inline-block;
 			font-weight: bold;
+			padding: 2em 1em;
+			width:100%;
+			line-height: 2em;
+			border-top: 2px solid @grey;
 		}
-		
+		a:hover {
+			background: @grey-dark;
+		}
+		a:hover span {
+			color:@purple;
+		}
+		a:hover i {
+			background:@purple;
+		}
+
+
 		span {
-			font-size: 0.9em;
+			font-size: 1.1em;
 			color:@button_text;
 
 		}
@@ -104,12 +124,7 @@
 			margin: 0 0.2em 0em 0;
 			.circle(2em,@button_color)
 		}
-		a:hover span {
-			color:@yellow-dark;
-		}
-		a:hover i {
-			background:@yellow-dark;
-		}
+		
 	}
 }
 .card-article {
