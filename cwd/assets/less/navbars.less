@@ -18,7 +18,8 @@
         	background: none;
         }
     }
-}
+
+
 #login {
 	li {
 	a { color:@purple-dark;}
@@ -113,6 +114,7 @@
 
 .max-logo-container {
 	width: 75%;
+
 }
 
 #edit-nav {
@@ -126,7 +128,7 @@ padding-bottom: 6em;
 		margin: 0 1em 0 1em;
 
 			a {
-				.paragraph(bold, @white);
+
 				
 				padding: 1.5em;
 			}
@@ -204,7 +206,9 @@ background: @grey;
 
 .triangle-menu:nth-child(1) {
 background: @purple-alt;
-
+a {
+				.paragraph(bold, @white);
+}
 	:hover {
 		background: @purple-alt;
 	}
@@ -219,6 +223,16 @@ background: @purple-alt;
 	     .triangle(bottom,45px,45px,@purple-alt);
 	}
 
+.circle {
+  color: @white;
+  font-size: 0.7em;
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  background: @purple-dark;
+}
 
 &:hover {
 	background: @purple-alt;
@@ -233,10 +247,11 @@ background: @purple-alt;
 	}
 }
 
-
 .triangle-menu:nth-child(2) {
-background: @yellow;
-
+background: @white;
+a {
+				.paragraph(bold, @purple);
+}
 	:hover {
 		background: @yellow;
 	}
@@ -248,9 +263,19 @@ background: @yellow;
      left: 25%;
      top: 40px;
      z-index: -1;
-	     .triangle(bottom,45px,45px,@yellow);
+	     .triangle(bottom,45px,45px,@white);
 	}
 
+.circle {
+  color: @white;
+  font-size: 0.7em;
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  background: @yellow;
+}
 
 &:hover {
 	background: @yellow;
@@ -268,10 +293,13 @@ background: @yellow;
 
 
 .triangle-menu:nth-child(3) {
-background: @cyan;
-
+background: @white;
+a {
+				.paragraph(bold, @purple);
+}
 	:hover {
 		background: @cyan;
+	.paragraph(bold, @white);	
 	}
 	:active {
 		background: @cyan;
@@ -281,9 +309,19 @@ background: @cyan;
      left: 25%;
      top: 40px;
      z-index: -1;
-	     .triangle(bottom,45px,45px,@cyan);
+	     .triangle(bottom,45px,45px,@white);
 	}
 
+.circle {
+  color: @white;
+  font-size: 0.7em;
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  background: @cyan;
+}
 
 &:hover {
 	background: @cyan;
@@ -300,10 +338,13 @@ background: @cyan;
 
 
 .triangle-menu:nth-child(4) {
-background: @orange;
-
+background: @white;
+a {
+				.paragraph(bold, @purple);
+}
 	:hover {
 		background: @orange;
+				.paragraph(bold, @white);
 	}
 	:active {
 		background: @orange;
@@ -313,9 +354,18 @@ background: @orange;
      left: 25%;
      top: 40px;
      z-index: -1;
-	     .triangle(bottom,45px,45px,@orange);
+	     .triangle(bottom,45px,45px,@white);
 	}
-
+.circle {
+  color: @white;
+  font-size: 0.7em;
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  background: @orange;
+}
 
 &:hover {
 	background: @orange;
@@ -332,10 +382,13 @@ background: @orange;
 
 
 .triangle-menu:nth-child(5) {
-background: @purple;
-
+background: @white;
+a {
+				.paragraph(bold, @purple);
+}
 	:hover {
 		background: @purple;
+				.paragraph(bold, @white);
 	}
 	:active {
 		background: @purple;
@@ -345,10 +398,19 @@ background: @purple;
      left: 25%;
      top: 40px;
      z-index: -1;
-	     .triangle(bottom,45px,45px,@purple);
+	     .triangle(bottom,45px,45px,@white);
 	}
 
-
+.circle {
+  color: @white;
+  font-size: 0.7em;
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  background: @purple;
+}
 &:hover {
 	background: @purple;
 	&:after {
