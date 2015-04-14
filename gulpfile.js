@@ -40,6 +40,15 @@ var html_files = [
     'render/templates/emails/*.html',
     'render/templates/layouts/*.html'
 ]
+var js_files = [
+    'bower_components/jquery/dist/jquery.js',
+    'bower_components/jqueryui/jquery-ui.js',
+    'bower_components/bootstrap/dist/js/bootstrap.js',
+    'bower_components/jquery-selectboxit/src/javascripts/jquery.selectBoxIt.js',
+    'bower_components/modernizr/modernizr.js',
+    'cwd/assets/js/main.js'
+
+]
 
 var onError = function (err) {  
   gutil.beep();
@@ -96,13 +105,16 @@ gulp.task('include', function() {
 /*======================================
 =            Convert JS         =
 ======================================*/
-
+var all_js = mainBowerFiles();
+all_js.push('cwd/assets/js/main.js');
+console.log(all_js);
 gulp.task('js', function() {
-  return gulp.src(mainBowerFiles())
-    .pipe(concat('main.js', {newLine: ';'}))
-    .pipe(uglify())
+  return gulp.src(all_js)
+    .pipe(concat('main.js', {newLine: ' '}))
     .pipe(debug({title: 'js:'}))
-    .pipe(gulp.dest('render/assets/js/'));
+    
+    .pipe(gulp.dest('render/assets/js/'))
+    .pipe(reload({ stream:true }));
 });
 
 /*======================================
@@ -182,7 +194,7 @@ gulp.task('aria', function () {
 =            Watcher            =
 ===============================*/
 
-gulp.task('watcher', ['less'], function() {
+gulp.task('watcher', ['include', 'less', 'js', 'imagemin','fonts'], function() {
 
     browserSync({
         server: "./render/",
@@ -191,7 +203,9 @@ gulp.task('watcher', ['less'], function() {
 
    gulp.watch("cwd/assets/less/*.less", ['less']).on('error', gutil.log);
    gulp.watch("cwd/**/*.html", ['include']);
-   gulp.watch("cwd/assets/images/*.svg", ['imagemin']);
+   gulp.watch("cwd/assets/images/*", ['imagemin']);
+   gulp.watch("cwd/assets/js/*.js", ['js']);
+
 });
 /*===============================
 =           Move Folders         =
