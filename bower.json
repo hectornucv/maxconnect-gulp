@@ -16,12 +16,29 @@
   "dependencies": {
     "modernizr": "*",
     "jquery": "*",
+    "jqueryui": "*",
     "bootstrap": "v3.3.4",
-    "selectize": "*"
+    "jquery-selectboxit": "*"
   },
+  
+  
+    
   "overrides": {
+    "jquery": {
+      "main": "./dist/jquery.js"
+    },
+    
+    "jqueryui": {
+      "main": "./jquery-ui.js"
+    },
+    
     "modernizr": {
       "main": "./modernizr.js"
+    },
+    "jquery-selectboxit": {
+      "main": [
+        "./src/javascripts/jquery.selectBoxIt.js"
+       ]
     },
     "bootstrap": {
       "main": [
