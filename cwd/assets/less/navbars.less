@@ -4,32 +4,44 @@
 	padding-top: 1.5em;
 	border-bottom: 1px solid #999;
 
-    nav {
-        li {} 
-        a { color: @purple-dark; }
+    .nav {
+        li { 
+        	a { 
+        		color:@grey-darkest;
+				font-weight: normal;
+        		font-size: 1.2em;
+        	}
+    	}
     }
 
-        a { 
-        color: @grey-darkest; 
-		font-weight: bold;
-        }
-        a:hover {
-        	color: @purple-dark;
-        	background: none;
-        }
-    }
-
-
+  //       a { 
+  //       color: @grey-darkest; 
+		// font-weight: bold;
+  //       }
+  //       a:hover {
+  //       	color: @purple-dark;
+  //       	background: none;
+  //       }
 #login {
 	li {
-	a { color:@purple-dark;}
-	a:hover { color:@purple;}
+		
+	a { color:@grey-darkest;
+	font-weight: normal;
+	font-size: 0.99em;
+		i{
+			color: @purple-dark;
+			}
+			}
+	a:hover { color:@purple-dark;}
 	}
 	li:nth-child(2){
 	
 		border-left:1px solid @grey;
 	}
 }
+    }
+
+
 
 #color-nav {
 	margin: 0px;
